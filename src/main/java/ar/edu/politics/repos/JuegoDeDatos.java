@@ -1,5 +1,8 @@
 package ar.edu.politics.repos;
 
+import static java.util.Arrays.asList;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -60,51 +63,59 @@ public class JuegoDeDatos {
 		sosa = new Candidato();
 		sosa.setNombre("Julio Sosa");
 		sosa.setPartido(frejuli);
-		sosa.setPromesas(Arrays.asList(
+		sosa.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Terminar con la inseguridad"),
-				new Promesa("Aborto para unos, banderitas para otros")));
+				new Promesa("Aborto para unos, banderitas para otros"))));
 		
 		benitez = new Candidato();
 		benitez.setNombre("Myriam Benitez");
 		benitez.setPartido(frejuli);
-		benitez.setPromesas(Arrays.asList(new Promesa("Girar y girar hacia la libertad")));
+		benitez.setPromesas(new ArrayList<Promesa>(
+			asList(
+				new Promesa("Girar y girar hacia la libertad"))));
 		
 		yapura = new Candidato();
 		yapura.setNombre("Marcelo Yapura");
 		yapura.setPartido(frejuli);
-		yapura.setPromesas(Arrays.asList(
+		yapura.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Terminar con la pobreza"),
-				new Promesa("Que todos los docentes de la UTN cobren en euros")));
+				new Promesa("Que todos los docentes de la UTN cobren en euros"))));
 		
 		ramos = new Candidato();
 		ramos.setNombre("Manuel Ramos");
 		ramos.setPartido(perone);
-		ramos.setPromesas(Arrays.asList(
+		ramos.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Terminar con la inseguridad"),
-				new Promesa("Recuperar la confianza de los argentinos")));
+				new Promesa("Recuperar la confianza de los argentinos"))));
 		
 		monti = new Candidato();
 		monti.setNombre("Yaco Monti");
 		monti.setPartido(perone);
-		monti.setPromesas(Arrays.asList(
+		monti.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Terminar con la inseguridad"), 
-				new Promesa("Recuperar la dignidad")));
+				new Promesa("Recuperar la dignidad"))));
 		
 		rota = new Candidato();
 		rota.setNombre("Nino Rota");
 		rota.setPartido(prime);
-		rota.setPromesas(Arrays.asList(
+		rota.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Ganarle a la pobreza"), 
 				new Promesa("Sacar el cepo a la moneda extranjera"),
-				new Promesa("Eliminar el impuesto a las ganancias")));
+				new Promesa("Eliminar el impuesto a las ganancias"))));
 		
 		cafrune = new Candidato();
 		cafrune.setNombre("Yamila Cafrune");
 		cafrune.setPartido(prime);
-		cafrune.setPromesas(Arrays.asList(
+		cafrune.setPromesas(new ArrayList<Promesa>(
+			asList(
 				new Promesa("Terminar con Futbol para Todos"),
 				new Promesa("Privatizar las empresas del estado"), 
-				new Promesa("Dolarizar la economia")));
+				new Promesa("Dolarizar la economia"))));
 		
 		this.crearCandidato(sosa);
 		this.crearCandidato(benitez);

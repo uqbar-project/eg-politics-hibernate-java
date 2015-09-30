@@ -1,7 +1,6 @@
 package ar.edu.politics.domain;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.uqbar.commons.model.Entity;
@@ -57,7 +56,7 @@ public class Candidato extends Entity {
 	}
 
 	public void setPromesas(List<Promesa> promesas) {
-		this.promesas = new ArrayList<Promesa>(promesas);
+		this.promesas = promesas;
 	}
 	
 }
