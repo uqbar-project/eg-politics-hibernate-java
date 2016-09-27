@@ -1,15 +1,15 @@
 package ar.edu.politics.repos;
 
 import org.apache.commons.collections15.Predicate;
-import org.uqbar.commons.model.CollectionBasedHome;
+import org.uqbar.commons.model.CollectionBasedRepo;
 
 import ar.edu.politics.domain.Partido;
 
-public class RepoPartidos extends CollectionBasedHome<Partido> {
+public class RepoPartidos extends CollectionBasedRepo<Partido> {
 
 	private static RepoPartidos instance;
 	
-	static RepoPartidos getInstance() {
+	public static RepoPartidos getInstance() {
 		if (instance == null) {
 			instance = new RepoPartidos();
 		}

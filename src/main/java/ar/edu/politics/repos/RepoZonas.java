@@ -2,11 +2,11 @@ package ar.edu.politics.repos;
 
 
 import org.apache.commons.collections15.Predicate;
-import org.uqbar.commons.model.CollectionBasedHome;
+import org.uqbar.commons.model.CollectionBasedRepo;
 
 import ar.edu.politics.domain.Zona;
 
-public class RepoZonas extends CollectionBasedHome<Zona> {
+public class RepoZonas extends CollectionBasedRepo<Zona> {
 
 	private static RepoZonas instance;
 	

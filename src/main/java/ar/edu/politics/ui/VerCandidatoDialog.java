@@ -1,7 +1,8 @@
 package ar.edu.politics.ui;
 
 import java.awt.Color;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.commons.collections15.Transformer;
 import org.uqbar.arena.layout.HorizontalLayout;
@@ -18,6 +19,11 @@ import ar.edu.politics.appModel.VerCandidato;
 import ar.edu.politics.domain.Promesa;
 
 public class VerCandidatoDialog extends Dialog<VerCandidato> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2196833016478871899L;
 
 	public VerCandidatoDialog(WindowOwner owner, VerCandidato model) {
 		super(owner, model);
@@ -72,10 +78,10 @@ public class VerCandidatoDialog extends Dialog<VerCandidato> {
 		new Column<Promesa>(gridPromesas)
 			.setTitle("Fecha")
 			.setFixedSize(100)
-			.bindContentsToTransformer( new Transformer<Promesa, String>() {
+			.bindContentsToProperty("fecha").setTransformer( new Transformer<LocalDate, String>() {
 				@Override
-				public String transform(Promesa promesa) {
-					return new SimpleDateFormat("dd/MM/yyyy").format(promesa.getFecha());
+				public String transform(LocalDate fecha) {
+					return fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 				}
 			});
 			

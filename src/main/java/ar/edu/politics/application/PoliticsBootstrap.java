@@ -1,10 +1,12 @@
-package ar.edu.politics.repos;
+package ar.edu.politics.application;
 
 import static java.util.Arrays.asList;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
+
+import org.uqbar.arena.bootstrap.Bootstrap;
 
 import ar.edu.politics.domain.Candidato;
 import ar.edu.politics.domain.Partido;
@@ -12,8 +14,11 @@ import ar.edu.politics.domain.Peronista;
 import ar.edu.politics.domain.Preservativo;
 import ar.edu.politics.domain.Promesa;
 import ar.edu.politics.domain.Zona;
+import ar.edu.politics.repos.RepoCandidatos;
+import ar.edu.politics.repos.RepoPartidos;
+import ar.edu.politics.repos.RepoZonas;
 
-public class JuegoDeDatos {
+public class PoliticsBootstrap implements Bootstrap {
 	
 	private Peronista frejuli;
 	private Peronista perone;
@@ -44,7 +49,7 @@ public class JuegoDeDatos {
 		prime = new Preservativo();
 		prime.setAfiliados(1200);
 		prime.setNombre("PRIME");
-		prime.setFechaCreacion(new Date(109, 1, 2));
+		prime.setFechaCreacion(LocalDate.of(2009, 6, 15));
 
 		this.crearPartidos(frejuli);
 		this.crearPartidos(perone);
@@ -155,7 +160,13 @@ public class JuegoDeDatos {
 		}
 	}
 
-	public void init() {
+	@Override
+	public boolean isPending() {
+		return false;
+	}
+
+	@Override
+	public void run() {
 		initPartidos();
 		initCandidatos();
 		initZonas();

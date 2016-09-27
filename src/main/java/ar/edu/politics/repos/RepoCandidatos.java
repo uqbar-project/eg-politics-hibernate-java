@@ -1,11 +1,11 @@
 package ar.edu.politics.repos;
 
 import org.apache.commons.collections15.Predicate;
-import org.uqbar.commons.model.CollectionBasedHome;
+import org.uqbar.commons.model.CollectionBasedRepo;
 
 import ar.edu.politics.domain.Candidato;
 
-public class RepoCandidatos extends CollectionBasedHome<Candidato> {
+public class RepoCandidatos extends CollectionBasedRepo<Candidato> {
 
 	private static RepoCandidatos instance;
 	

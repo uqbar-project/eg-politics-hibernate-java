@@ -1,12 +1,12 @@
 package ar.edu.politics.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.uqbar.commons.model.UserException;
 
 public class Preservativo extends Partido {
 
-	private Date fechaCreacion;
+	private LocalDate fechaCreacion;
 
 	@Override
 	public void validar() {
@@ -16,17 +16,17 @@ public class Preservativo extends Partido {
 			throw new UserException("Debe ingresar fecha de creación");
 		}
 
-		if (fechaCreacion.after(new Date())) {
+		if (fechaCreacion.compareTo(LocalDate.now()) > 0) {
 			throw new UserException(
 					"La fecha de creación debe ser anterior a la de hoy");
 		}
 	}
 
-	public Date getFechaCreacion() {
+	public LocalDate getFechaCreacion() {
 		return fechaCreacion;
 	}
 
-	public void setFechaCreacion(Date fechaCreacion) {
+	public void setFechaCreacion(LocalDate fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
 

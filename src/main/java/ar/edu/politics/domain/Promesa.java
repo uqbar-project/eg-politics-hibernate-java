@@ -1,5 +1,6 @@
 package ar.edu.politics.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.uqbar.commons.model.UserException;
@@ -9,10 +10,10 @@ import org.uqbar.commons.utils.Observable;
 public class Promesa {
 
 	private String accionPrometida;
-	private Date fecha;
+	private LocalDate fecha;
 
 	public Promesa(String accionPrometida) {
-		this.fecha = new Date();
+		this.fecha = LocalDate.now();
 		this.accionPrometida = accionPrometida;
 	}
 
@@ -34,11 +35,11 @@ public class Promesa {
 		this.accionPrometida = accionPrometida;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
