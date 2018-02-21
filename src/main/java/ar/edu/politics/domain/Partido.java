@@ -1,12 +1,13 @@
 package ar.edu.politics.domain;
 
 import org.uqbar.commons.model.Entity;
-import org.uqbar.commons.model.UserException;
-import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.model.annotations.Observable;
+import org.uqbar.commons.model.exceptions.UserException;
 
 @Observable
 public class Partido extends Entity {
 	
+	private static final long serialVersionUID = 4340041658885203020L;
 	private String nombre;
 	private int afiliados;
 

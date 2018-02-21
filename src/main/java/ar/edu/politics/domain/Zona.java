@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.uqbar.commons.model.Entity;
-import org.uqbar.commons.model.UserException;
-import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.model.annotations.Observable;
+import org.uqbar.commons.model.exceptions.UserException;
 
 @Observable
 public class Zona extends Entity {
 
+	private static final long serialVersionUID = 5892343603843828245L;
 	private String descripcion;
 	private List<Candidato> candidatos = new ArrayList<>();
 

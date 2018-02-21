@@ -2,10 +2,11 @@ package ar.edu.politics.domain;
 
 import java.time.LocalDate;
 
-import org.uqbar.commons.model.UserException;
+import org.uqbar.commons.model.exceptions.UserException;
 
 public class Preservativo extends Partido {
 
+	private static final long serialVersionUID = -6399632232945865718L;
 	private LocalDate fechaCreacion;
 
 	@Override

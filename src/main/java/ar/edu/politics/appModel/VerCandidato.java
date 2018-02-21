@@ -1,7 +1,7 @@
 package ar.edu.politics.appModel;
 
-import org.uqbar.commons.utils.Dependencies;
-import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.model.annotations.Dependencies;
+import org.uqbar.commons.model.annotations.Observable;
 
 import ar.edu.politics.domain.Candidato;
 import ar.edu.politics.repos.RepoCandidatos;

@@ -12,8 +12,11 @@ import org.uqbar.arena.windows.WindowOwner;
 import ar.edu.politics.appModel.ConsultaCandidatos;
 import ar.edu.politics.appModel.VerCandidato;
 import ar.edu.politics.domain.Candidato;
+import ar.edu.politics.domain.Zona;
 
 public class ConsultaCandidatosWindow extends SimpleWindow<ConsultaCandidatos> {
+
+	private static final long serialVersionUID = -998931966763091828L;
 
 	public ConsultaCandidatosWindow(WindowOwner parent) {
 		super(parent, new ConsultaCandidatos());
@@ -38,7 +41,7 @@ public class ConsultaCandidatosWindow extends SimpleWindow<ConsultaCandidatos> {
 		new Label(mainPanel)
 			.setText("Zona de votación");
 		
-		Selector selectorVotacion = new Selector(mainPanel);
+		Selector<Zona> selectorVotacion = new Selector<Zona>(mainPanel);
 		selectorVotacion.allowNull(false);
 		selectorVotacion.bindValueToProperty("zonaSeleccionada");
 		selectorVotacion.bindItemsToProperty("zonasDeVotacion");
@@ -48,6 +51,7 @@ public class ConsultaCandidatosWindow extends SimpleWindow<ConsultaCandidatos> {
 		Table<Candidato> gridCandidatos = new Table<Candidato>(mainPanel, Candidato.class);
 		gridCandidatos.bindItemsToProperty("zonaSeleccionada.candidatos");
 		gridCandidatos.bindValueToProperty("candidatoSeleccionado");
+		gridCandidatos.setNumberVisibleRows(10);
 		
 		new Column<Candidato>(gridCandidatos)
 			.setTitle("Candidato")

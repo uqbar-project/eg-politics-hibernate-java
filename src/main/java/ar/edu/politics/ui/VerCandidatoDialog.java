@@ -41,7 +41,7 @@ public class VerCandidatoDialog extends Dialog<VerCandidato> {
 			.setForeground(Color.DARK_GRAY);
 		
 		new Label(panelIzquierdo)
-			.setBackground(Color.LIGHT_GRAY)
+			.setBackground(Color.CYAN)
 			.setFontSize(12)
 			.bindValueToProperty("candidato.nombre");
 		
@@ -72,8 +72,9 @@ public class VerCandidatoDialog extends Dialog<VerCandidato> {
 			.onClick(() -> this.getModelObject().agregarPromesa())
 			.bindEnabledToProperty("puedeAgregarPromesa");
 
-		Table<Promesa> gridPromesas = new Table(panelDerecho, Promesa.class);
+		Table<Promesa> gridPromesas = new Table<Promesa>(panelDerecho, Promesa.class);
 		gridPromesas.bindItemsToProperty("candidato.promesas");
+		gridPromesas.setNumberVisibleRows(7);
 		
 		new Column<Promesa>(gridPromesas)
 			.setTitle("Fecha")

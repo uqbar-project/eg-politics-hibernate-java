@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.uqbar.commons.model.Entity;
-import org.uqbar.commons.model.ObservableUtils;
-import org.uqbar.commons.model.UserException;
-import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.model.annotations.Observable;
+import org.uqbar.commons.model.exceptions.UserException;
+import org.uqbar.commons.model.utils.ObservableUtils;
 
 @Observable
 public class Candidato extends Entity {
 
+	private static final long serialVersionUID = -1559215366307777405L;
 	private String nombre;
 	private Partido partido;
 	private List<Promesa> promesas = new ArrayList<>();
